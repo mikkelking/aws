@@ -5,6 +5,7 @@
 Edit the settings.json to add your aws credentials
 
 ```
+git clone https://github.com/mikkelking/aws.git
 cd aws
 meteor --settings settings.json
 ```
