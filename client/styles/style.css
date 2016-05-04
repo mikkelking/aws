@@ -1,0 +1,58 @@
+.CodeMirror {
+  height: 600px;
+}
+
+.awstree{
+	overflow-y:scroll;
+	height:500px;
+}
+.json{
+	overflow-y:scroll;
+	height:250px;
+}
+
+.badge-available{
+	background-color: darkgreen;
+}
+.badge-running{
+	background-color: green;
+}
+.badge-stopped{
+	background-color: darkred;
+}
+.badge-starting{
+	background-color: orange;
+}
+.badge-running{
+	background-color: green;
+}
+.badge-stopping{
+	background-color: orange;
+}
+
+.text-available{
+	color: darkgreen;
+}
+.text-running{
+	color: green;
+}
+.text-stopped{
+	color: black;
+}
+.text-stopping{
+	color: red;
+}
+.text-starting{
+	color: orange;
+}
+
+
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }

@@ -1,0 +1,7 @@
+{
+  "public": {
+  "awsAccessKeyId": "XXX",
+  "awsSecretKey": "XXX+t+R",
+    "environment": "staging"
+  }
+}

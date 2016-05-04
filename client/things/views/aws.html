@@ -1,0 +1,62 @@
+<div >
+  <div >      
+    <h2 >
+    	<span ng-click="toggleDiags()">Amazon Web Services</span>
+   		<Button class="btn btn-primary" ng-click="getAWSData();">Refresh</Button> {{regionError}}
+	</h2>
+	<div ng-show="showJSON">
+	  Raw region data
+		<pre class="json">{{regionData | json}}</pre>
+	</div>
+	<div ng-show="showJSON">
+	  Raw EC2 data
+		<pre class="json">{{databaseData | json}}</pre>
+	</div>
+	<div ng-show="showJSON">
+	  Raw RDS data
+	 <pre class="json">{{rdsdb | json}}</pre>
+	</div>
+
+    <div treecontrol class="tree-dark awstree"
+	   tree-model="awsData"
+	   options="treeOptions"
+	   on-selection="showSelected(node)"
+		>
+		<span >
+		   <span class="badge badge-{{node.status}}" >
+		   		{{node.type}} <span ng-show="node.children.length>0">({{node.children.length}})</span>
+		   </span>
+		   <button class="btn btn-xs btn-default" ng-show="node.status == 'stopped'" ng-click="startMe(node)"><i class="fa fa-play" aria-hidden="true"></i></button>
+		   <button class="btn btn-xs btn-warning" ng-show="node.status == 'running'" ng-click="stopMe(node)"><i class="fa fa-hand-stop-o" aria-hidden="true"></i></button>
+		   <span class="text-{{node.status}}">
+				{{node.name}} {{node.status}}
+		   </span>
+		</span>
+	</div>
+
+<!--
+			<Button class="btn btn-primary" ng-click="getRegions();">Load EC2 Regions</Button> 
+			<BR><BR>
+			<div ui-grid="regionOptions" ui-grid-selection class="myGrid"></div>
+			<div ng-show="showJSON">
+			  Raw region data
+				<pre>{{regionData | json}}</pre>
+			</div>
+			<Button class="btn btn-primary" ng-click="getEC2();">Load EC2 Servers</Button>  {{serverError}}<BR><BR>
+			<div ui-grid="serverOptions" class="myGrid"></div>
+			<div ng-show="showJSON">
+			  Raw EC2 data
+				<pre>{{databaseData | json}}</pre>
+			</div>
+
+			<Button class="btn btn-primary" ng-click="getRDSDBS();">Load RDS on Server</Button> &nbsp; 
+			<Button class="btn btn-danger" ng-click="clrRDSDBS();">X</Button> &nbsp;
+			<BR><BR>
+			<div id="rdsGrid" ui-grid="rdsOptions" class="myGrid"></div>
+			<div ng-show="showJSON">
+			  Raw RDS data
+			 <pre >{{rdsdb | json}}</pre>
+			</div>
+-->
+  </div>
+</div>
